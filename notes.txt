@@ -1,3 +1,14 @@
-http-server serve
-yarn init -y
-yarn add --dev webpack webpack-cli webpack-dev-server
+> http-server serve
+
+> yarn init -y
+
+> yarn add --dev webpack webpack-cli webpack-dev-server
+
+> npx webpack --mode=development
+- observar o erro da pasta /src no console
++ criar a pasta /src
++ mover o arquivo index.js para a pasta /src
+> npx webpack --mode=development
++ a pasta /build é criada contendo o arquivo main.js
+
+
