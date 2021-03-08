@@ -1,0 +1,8 @@
+{
+  "name": "webpack-curso",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:evandrosevergnini/webpack-curso.git",
+  "author": "Evandro C. Severginini <evandrosevergnini@gmail.com>",
+  "license": "MIT"
+}

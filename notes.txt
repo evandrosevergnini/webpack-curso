@@ -1,1 +1,2 @@
 http-server serve
+yarn init -y
