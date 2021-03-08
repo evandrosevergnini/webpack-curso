@@ -1,2 +1,3 @@
 http-server serve
 yarn init -y
+yarn add --dev webpack webpack-cli webpack-dev-server
