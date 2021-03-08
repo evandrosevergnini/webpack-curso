@@ -1,3 +1,3 @@
-function soma(a, b) {
+export function soma(a, b) {
   return parseInt(a) + parseInt(b);
 }
