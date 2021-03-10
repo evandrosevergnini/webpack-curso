@@ -62,6 +62,12 @@
       }
     ]
   },
-  + no public/index.html remover as importações de CSS que estão comentadas, pois não serão mais necessárias
-  ! observar que o index.html gerado não tem os CSS, mas eles estáo incluídos no main-bundle.js e são injetos na index.html em tempo de execução
-  
++ no public/index.html remover as importações de CSS que estão comentadas, pois não serão mais necessárias
+! observar que o index.html gerado não tem os CSS, mas eles estáo incluídos no main-bundle.js e são injetos na index.html em tempo de execução
+
+// Adicionando sass-loader
+> yarn add --dev sass sass-loader
++ alterar o nome da pasta css para scss
++ alterar a extensão do arquivo .css para .scss
++ alterar a importação do css para scss
++ usar nested styles

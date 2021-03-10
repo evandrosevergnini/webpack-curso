@@ -1,5 +1,5 @@
 import { soma } from "./assets/js/calculadora";
-import "./assets/css/main.css";
+import "./assets/scss/main.scss";
 
 const inputs = document.querySelectorAll("input");
 const a = inputs[0];
