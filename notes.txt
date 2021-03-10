@@ -47,3 +47,21 @@
 + template: path.resolve(__dirname, "public", "index.html"),
 + adicionar <title><%= htmlWebpackPlugin.options.title %></title> à nossa index.html para deixar o nosso plugin configurar o título da página
 
+// Adicionando loaders
++ adicionando o CSS como um módulo em index.js:
++ mover o arquivo main.css para /src/assets/css
++ import "./assets/css/main.css";
++ adicinando os loaders ao projeto:
+> arn add --dev css-loader style-loader
++ no webpack.config.js adicionar:
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
+      }
+    ]
+  },
+  + no public/index.html remover as importações de CSS que estão comentadas, pois não serão mais necessárias
+  ! observar que o index.html gerado não tem os CSS, mas eles estáo incluídos no main-bundle.js e são injetos na index.html em tempo de execução
+  
