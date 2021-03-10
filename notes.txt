@@ -71,3 +71,13 @@
 + alterar a extensão do arquivo .css para .scss
 + alterar a importação do css para scss
 + usar nested styles
+
+// Extraindo os estilos para um arquivo em separados
+> yarn add --dev mini-css-extract-plugin
+> yarn
++ importar o plugin:
++ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
++ instanciar o plugin:
++ new MiniCssExtractPlugin(),
++ chamar o método loader na cadeia de loaders em substituição ao style-loader:
++ use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
