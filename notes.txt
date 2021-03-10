@@ -28,3 +28,22 @@
 + usar coring [name]-bundle para gera a dist
 + refatorar no index.html para <script src="dist/main-bundle.js"></script>
 
+// Adicionando html-webpack-plugin
+> yarn add --dev html-webpack-plugin
+- no arquivo index.html comentar as folhas de arquivo e a tag de imagemos
++ no webpack.config.js importar html-webpack-plugin:
++ const HtmlWebpackPlugin = require("html-webpack-plugin");
++ adicionar a propriedade plugins para instanciar HtmlWebpackPlugin:
++ plugins: [
+    new HtmlWebpackPlugin({
+      title: "Webpack Curso"
+    }),
+  ],
+> http-server ./dist
++ adicionar a propriedade template à instância de HtmlWebpackPlugin para gerar o html a partir da nossa própria página:
++ template: path.resolve(__dirname, "public", "index.html"),
++ mover a nossa página index.html para a pasta public
++ apagar a importação do nosso bundle, que a partir de agora fica a cargo do Webpack injetar a tag script na página index.html gerada
++ template: path.resolve(__dirname, "public", "index.html"),
++ adicionar <title><%= htmlWebpackPlugin.options.title %></title> à nossa index.html para deixar o nosso plugin configurar o título da página
+
