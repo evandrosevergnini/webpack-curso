@@ -1,3 +1,4 @@
 // Usando o webpack-dev-server
 - substituir o script que chama http-server por:
 "serve-dev": "webpack serve --mode development",
+! mostrar o hot-reload editando o arquivo _reset.scss para adicionar background ao body
