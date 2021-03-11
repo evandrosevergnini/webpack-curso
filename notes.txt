@@ -1,2 +1,2 @@
-http-server serve
-yarn init -y
+: iniciar o projeto para gerenciamento de dependências e utilização do webpack
+  yarn init -y
