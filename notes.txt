@@ -1,73 +1,20 @@
-> http-server serve
-
-> yarn init -y
-
-> yarn add --dev webpack webpack-cli webpack-dev-server
-
-> npx webpack --mode=development
-+ adicionar 
-  "scripts": {
-    "build-dev": "webpack --mode=development"
-  },
-  ao /package.json
-> yarn build-dev
-- observar o erro da pasta /src no console
-+ criar a pasta /src
-+ mover o arquivo index.js para a pasta /src
-> yarn build-dev
-
-+ observar como a pasta /build é criada contendo o arquivo main.js
-
-+ no arquivo /src/index.js usar import para a calculadora
-+ mover calculadora.js para a pasta /src/assets/js e usar o export na função
-> yarn build-dev
-
-+ criar arquivo webpack.config.js na raiz do projeto
-+ adicionar configurações iniciais
-+ renomear index.js para main.js
-+ usar coring [name]-bundle para gera a dist
-+ refatorar no index.html para <script src="dist/main-bundle.js"></script>
-
-// Adicionando html-webpack-plugin
-> yarn add --dev html-webpack-plugin
-- no arquivo index.html comentar as folhas de arquivo e a tag de imagemos
-+ no webpack.config.js importar html-webpack-plugin:
-+ const HtmlWebpackPlugin = require("html-webpack-plugin");
-+ adicionar a propriedade plugins para instanciar HtmlWebpackPlugin:
-+ plugins: [
-    new HtmlWebpackPlugin({
-      title: "Webpack Curso"
-    }),
-  ],
-> http-server ./dist
-+ adicionar a propriedade template à instância de HtmlWebpackPlugin para gerar o html a partir da nossa própria página:
-+ template: path.resolve(__dirname, "public", "index.html"),
-+ mover a nossa página index.html para a pasta public
-+ apagar a importação do nosso bundle, que a partir de agora fica a cargo do Webpack injetar a tag script na página index.html gerada
-+ template: path.resolve(__dirname, "public", "index.html"),
-+ adicionar <title><%= htmlWebpackPlugin.options.title %></title> à nossa index.html para deixar o nosso plugin configurar o título da página
-
-// Adicionando loaders
-+ adicionando o CSS como um módulo em index.js:
-+ mover o arquivo main.css para /src/assets/css
-+ import "./assets/css/main.css";
-+ adicinando os loaders ao projeto:
-> arn add --dev css-loader style-loader
-+ no webpack.config.js adicionar:
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"]
-      }
-    ]
-  },
-+ no public/index.html remover as importações de CSS que estão comentadas, pois não serão mais necessárias
-! observar que o index.html gerado não tem os CSS, mas eles estáo incluídos no main-bundle.js e são injetos na index.html em tempo de execução
-
 // Adicionando sass-loader
+
 > yarn add --dev sass sass-loader
+
+: webpack.config.js
++ use: ["style-loader", "css-loader", "sass-loader"]
+
+: /src/assets/css
 + alterar o nome da pasta css para scss
-+ alterar a extensão do arquivo .css para .scss
-+ alterar a importação do css para scss
++ alterar a extensão dos arquivos .css para .scss
+
+: /src/assets/scss/main.scss
++ @import 'reset';
+
+: src/main.js
++ alterar a importação do css para scss, 
+  import "./assets/scss/main.scss";
 + usar nested styles
+
+
