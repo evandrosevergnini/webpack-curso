@@ -1,11 +1,7 @@
-> http-server serve
-
-> yarn init -y
-
-> yarn add --dev webpack webpack-cli webpack-dev-server
-
+: executar webpack em modo de desenvolvimento usand o npx
 > npx webpack --mode=development
-- observar o erro da pasta /src no console
+! observar o erro da pasta /src no console
+
 + criar a pasta /src
 + mover o arquivo index.js para a pasta /src
 > npx webpack --mode=development
