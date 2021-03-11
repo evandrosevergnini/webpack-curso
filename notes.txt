@@ -1,1 +1,6 @@
-http-server serve
+: instalar http-server (https://www.npmjs.com/package/http-server)
+yarn global add http-server ou 
+npm install --global http-server
+
+: rodar Projeto
+http-server ./
