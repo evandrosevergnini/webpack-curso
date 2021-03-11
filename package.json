@@ -5,6 +5,9 @@
   "repository": "git@github.com:evandrosevergnini/webpack-curso.git",
   "author": "Evandro C. Severginini <evandrosevergnini@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "serve": "http-server ./"
+  },
   "devDependencies": {
     "webpack": "^5.24.3",
     "webpack-cli": "^4.5.0",
