@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "git@github.com:evandrosevergnini/webpack-curso.git",
   "author": "Evandro C. Severginini <evandrosevergnini@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "serve": "http-server ./"
+  }
 }

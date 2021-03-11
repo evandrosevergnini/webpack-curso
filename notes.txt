@@ -1,2 +1,6 @@
 : iniciar o projeto para gerenciamento de dependências e utilização do webpack
   yarn init -y
+: adicionar script para rodar o http-server
+  "scripts": {
+    "serve": "http-server ./"
+  }
