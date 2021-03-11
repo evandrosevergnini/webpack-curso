@@ -1,3 +1,2 @@
-http-server serve
-yarn init -y
+: Adicionar ao projeto como dependência de desenvolvimento
 yarn add --dev webpack webpack-cli webpack-dev-server
