@@ -7,7 +7,6 @@
   "license": "MIT",
   "scripts": {
     "serve-dev": "webpack serve --mode development",
-    "serve-dist": "webpack --mode=development && http-server ./dist",
     "build-dev": "webpack --mode=development"
   },
   "devDependencies": {
