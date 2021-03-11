@@ -6,6 +6,7 @@
   "author": "Evandro C. Severginini <evandrosevergnini@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "serve": "http-server ./",
     "build-dev": "webpack --mode=development"
   },
   "devDependencies": {
