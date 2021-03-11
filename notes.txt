@@ -81,3 +81,29 @@
 + new MiniCssExtractPlugin(),
 + chamar o método loader na cadeia de loaders em substituição ao style-loader:
 + use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+
+// Usando webpack-dev-server
++ adicionar o script "serve-dev": "webpack serve --mode development", em package.json
+: mostrar o hot-reload editando o arquivo _reset.scss para adicionar background ao body
+
+// Carregando imagens
+
++ index.html
+: descomentar o código "img src="/logo.png" alt="Logo" />"
+
++ webpack.config.js
+: adicionar em output:
+  assetModuleFilename: "assets/[name]-[hash:8][ext]",
+: adicionar o script em rules: 
+  {
+    test: /\.(png|svg|jpg|jpeg|gif)$/i,
+    type: 'asset/resource',
+  },
+  
+  + main.js
+  : adicionar o código:
+    import Logo from "./assets/images/logo.png";
+    const logo = new Image();
+    logo.src = Logo;
+    document.querySelector("header h1").appendChild(logo);
+    + logo.png em /src/assets/images
