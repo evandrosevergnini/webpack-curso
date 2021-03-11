@@ -1,6 +1,9 @@
 // Adicionando html-webpack-plugin
 > yarn add --dev html-webpack-plugin
 
+: package.json
++ "serve": "webpack --mode=development && http-server ./dist",
+
 : webpack.config.js 
 +importar html-webpack-plugin:
   const HtmlWebpackPlugin = require("html-webpack-plugin");
