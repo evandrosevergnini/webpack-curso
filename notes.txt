@@ -1,30 +1,7 @@
-> http-server serve
-
-> yarn init -y
-
-> yarn add --dev webpack webpack-cli webpack-dev-server
-
-> npx webpack --mode=development
-+ adicionar 
-  "scripts": {
-    "build-dev": "webpack --mode=development"
-  },
-  ao /package.json
-> yarn build-dev
-- observar o erro da pasta /src no console
-+ criar a pasta /src
-+ mover o arquivo index.js para a pasta /src
-> yarn build-dev
-
-+ observar como a pasta /build é criada contendo o arquivo main.js
-
-+ no arquivo /src/index.js usar import para a calculadora
-+ mover calculadora.js para a pasta /src/assets/js e usar o export na função
-> yarn build-dev
-
 + criar arquivo webpack.config.js na raiz do projeto
 + adicionar configurações iniciais
 + renomear index.js para main.js
 + usar coring [name]-bundle para gera a dist
-+ refatorar no index.html para <script src="dist/main-bundle.js"></script>
+: index.html 
+  refatorar para <script src="dist/main-bundle.js"></script>
 
