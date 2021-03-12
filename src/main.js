@@ -15,5 +15,3 @@ btnSoma.addEventListener("click", function () {
 const logo = new Image();
 logo.src = Logo;
 document.querySelector("header h1").appendChild(logo);
-
-throw new Error('error');

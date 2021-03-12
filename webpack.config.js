@@ -1,15 +1,19 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  mode: 'development',
-  devtool: 'eval-source-map',
-  entry: { 
-    main: path.resolve(__dirname, "src", "main.js") 
+  mode: "development",
+  devtool: "eval-source-map",
+  devServer: {
+    port: 8091,
+    open: "Google Chrome", // 'Google Chrome' on macOS, 'google-chrome' on Linux and 'chrome' on Windows
+  },
+  entry: {
+    main: path.resolve(__dirname, "src", "main.js"),
   },
   output: {
-    filename: '[name]-bundle.js',
+    filename: "[name]-bundle.js",
     path: path.resolve(__dirname, "dist"),
     publicPath: "/",
     assetModuleFilename: "assets/[name]-[hash:8][ext]",
@@ -28,9 +32,9 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
+        type: "asset/resource",
       },
-    ]
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
