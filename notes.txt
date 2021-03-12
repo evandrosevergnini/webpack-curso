@@ -5,6 +5,10 @@
 : webpack.config.js
 + const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 + instanciar o plugin:
-+ new MiniCssExtractPlugin(),
+  new MiniCssExtractPlugin({
+    filename: "[name]-bundle-[chunkhash].css",
+  }),
 + chamar o método loader na cadeia de loaders em substituição ao style-loader:
 + use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
++ alterar o output para usar template stringa
+filename: "[name]-bundle-[chunkhash].js",
