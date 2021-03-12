@@ -1,12 +1,8 @@
-// Modes
-
+// Habilitando source maps
 : webpack.config.js
-+ adicionar como propriedade do objeto exportado
-  mode: 'development',
++ no objeto raiz adicionar a proprieade devtool
+  devtool: 'eval-source-map', (https://webpack.js.org/configuration/devtool/#devtool)
 
-: package.json
-+ substituir os scritps pelos seguintes
-  "serve-dev": "webpack serve",
-  "serve-prod": "webpack serve --mode=production",
-  "build-dev": "webpack",
-  "build-prod": "webpack --mode=production"
+: main.js
++ adicionar o código para demonstração
+  throw new Error('error');
