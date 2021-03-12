@@ -1,23 +1,12 @@
-// Transpilando JavaScript para browsers antigos
-
-: /src/assets/js
-+ alterar o código de calculadora.js para
-  export const soma = (a, b) => parseInt(a) + parseInt(b);
-
-> yarn add --dev @babel/core @babel/preset-env babel-loader
-
-:babel.config.json 
-+ criar arquivo com o código
-  {
-    "presets": [
-      "@babel/preset-env"
-    ]
-  }
+// Modes
 
 : webpack.config.js
-+ adicionar à propriedade rules de module
-  {
-    test: /\.js$/,
-    exclude: /node_modules/,
-    use: ["babel-loader"],
-  },
++ adicionar como propriedade do objeto exportado
+  mode: 'development',
+
+: package.json
++ substituir os scritps pelos seguintes
+  "serve-dev": "webpack serve",
+  "serve-prod": "webpack serve --mode=production",
+  "build-dev": "webpack",
+  "build-prod": "webpack --mode=production"
