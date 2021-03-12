@@ -1,21 +1,23 @@
-// Carregando imagens
+// Transpilando JavaScript para browsers antigos
 
-+ index.html
-: descomentar o código "img src="/logo.png" alt="Logo" />"
+: /src/assets/js
++ alterar o código de calculadora.js para
+  export const soma = (a, b) => parseInt(a) + parseInt(b);
 
-+ webpack.config.js
-: adicionar em output:
-  assetModuleFilename: "assets/[name]-[hash:8][ext]",
-: adicionar o script em rules: 
+> yarn add --dev @babel/core @babel/preset-env babel-loader
+
+:babel.config.json 
++ criar arquivo com o código
   {
-    test: /\.(png|svg|jpg|jpeg|gif)$/i,
-    type: 'asset/resource',
+    "presets": [
+      "@babel/preset-env"
+    ]
+  }
+
+: webpack.config.js
++ adicionar à propriedade rules de module
+  {
+    test: /\.js$/,
+    exclude: /node_modules/,
+    use: ["babel-loader"],
   },
-  
-  + main.js
-  : adicionar o código:
-    import Logo from "./assets/images/logo.png";
-    const logo = new Image();
-    logo.src = Logo;
-    document.querySelector("header h1").appendChild(logo);
-    + logo.png em /src/assets/images

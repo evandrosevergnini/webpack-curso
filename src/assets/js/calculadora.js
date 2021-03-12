@@ -1,3 +1,2 @@
-export function soma(a, b) {
-  return parseInt(a) + parseInt(b);
-}
+export const soma = (a, b) => parseInt(a) + parseInt(b);
+
